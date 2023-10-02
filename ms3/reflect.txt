@@ -1,0 +1,49 @@
+/*/////////////////////////////////////////////////////////////////////////
+                        Assignment 1 - Milestone 3 (Reflection)
+Full Name  : Raphael Antioquia
+Student ID#: 031379126
+Email      : rtantioquia@myseneca.ca
+Section    : NKK
+
+Authenticity Declaration:
+I declare this submission is the result of my own work and has not been
+shared with any other student or 3rd party content provider. This submitted
+piece of work is entirely of my own creation.
+/////////////////////////////////////////////////////////////////////////*/
+
+
+1.	This milestone required the creation of three additional functions to enhance the functionality and organization of the application. These functions, along with their purpose and value, are described below.
+
+a. Function prototype: void inputDate(struct Date* date);
+The inputDate() function's primary role is to receive and validate user-provided date input. It requests the year, month, and day from the user and checks whether the input falls within acceptable ranges. To achieve this, it incorporates algorithms that identify leap years and determine the correct number of days for each month. This function's inclusion in the codebase not only simplifies the date input process but also ensures proper error checking, leading to a more robust, organized, and maintainable application.
+
+b. Function prototype: void inputTime(struct Time* time);
+The inputTime() function focuses on obtaining and validating time input from the user. It requests hours and minutes and confirms whether the input adheres to acceptable ranges (when the clinic opens and closes) and is a multiple of the appointment intervals which is the clinic's policy. By encapsulating the time input process and error checking, this function contributes to the cleanliness and organization of the codebase, ultimately making the application more robust and maintainable.
+
+c. Function prototype: void sortAppointmentsByDate(struct ClinicData* data);
+The sortAppointmentsByDate() function employs a bubble sort algorithm to arrange the appointment array by date and time. By prioritizing sorting based on year, month, day, hour, and minute, this function enhances the application's overall organization and efficiency. It ensures that appointment data is presented in a manner that is logical and easily accessible for display, search, and management purposes.
+
+In conclusion, the inputDate(), inputTime(), and sortAppointmentsByDate() functions provide significant value to the clinic management application. These functions not only help maintain a clean, organized, and maintainable codebase but also ensure that user input adheres to the clinic's scheduling constraints. Furthermore, they contribute to a more user-friendly presentation of appointment data.
+
+
+2.	    Minimizing the number of scanf function calls in the clinic.c source code file was a deliberate strategy to optimize the input handling and validation process. By employing specific input functions, such as inputInt(), inputIntPositive(), inputIntRange(), inputCharOption(), and inputCString(), and even creating my own inputDate() and inputTIme functions, the application centralizes input handling and validation, promoting modularity and maintainability.
+
+This approach also mitigates potential issues that can arise from the direct usage of scanf, such as input-related errors and buffer overflow. The provided input functions cater to a wide range of input types and incorporate robust error checking and validation (which is required due to the strict appointment policies) mechanisms, ensuring thorough input validation prior to processing.
+
+By reducing the number of scanf function calls, the code becomes more readable, comprehensible, and accessible to programmers who may not be familiar with scanf or the application's specific input handling requirements. The input functions also promote reusability, as they can be employed across multiple modules, enhancing the overall efficiency of the codebase.
+
+In summary, minimizing the number of scanf function calls in the client.c source code file is a best practice that improves input handling, validation, code modularity, maintainability, and comprehensibility.
+
+
+
+3.	    The strategic placement of the inputDate(), inputTime(), and sortAppointmentsByDate() functions in the clinic.c module was based on several factors and considerations.
+
+The inputDate() function was placed in the clinic.c module due to its association with appointment management and the need for access to the Date struct. Although it relies on other input functions like inputIntPositive() and inputIntRange() located in core.c, the data exchange between these functions and the Date struct is relatively insignificant. Placing the inputDate() function in the clinic.c module streamlines the development process by reducing the need to switch between multiple windows or files while coding.
+
+Likewise, the inputTime() function was placed in the clinic.c module because of its role in handling appointment time inputs and the requirement for access to the Time struct. It also relies on input functions such as inputIntPositive() and inputIntRange(). Positioning this function in the clinic.c module similarly streamlines the development process.
+
+The sortAppointmentsByDate() function was placed in the clinic.c module as it plays a critical role in appointment management and requires access to the Appointment and ClinicData structs. This function ensures that appointment data is logically organized and easily accessible for display, search, and management purposes. By positioning this function within the clinic.c module, other functions in the module can readily access sorted appointment data when needed. The function utilizes a simple and efficient bubble sort algorithm, which is easily maintained within the clinic.c module.
+
+In summary, the strategic placement of the inputDate(), inputTime(), and sortAppointmentsByDate() functions within the clinic.c module optimizes the organization, functionality, and maintainability of the clinic management application. Grouping these functions with other related input functions and data structures keeps the codebase clean, modular, and maintainable. This strategic placement enhances the overall efficiency of the application, ensuring that appointment data is presented in a logical, user-friendly manner for easy access and management, while streamlining the development process.
+
+Consolidating related functions within the same module allows developers to more easily locate, understand, and modify the relevant code. This centralized organization improves the efficiency of the development process and code maintainability, simplifying the debugging and updating of related functionalities. As a result, the overall quality of the application is positively impacted by this strategic placement of functions within the clinic.c module.
